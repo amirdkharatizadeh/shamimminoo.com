@@ -22,7 +22,7 @@
 	<meta name="description" content="Internationally recognized Iranian harpist Shamim Minoo, Gold Medalist at the 13th USA International Harp Competition." />
 </svelte:head>
 
-<Header />
+<!-- <Header /> -->
 
 <main class="bg-background text-foreground">
 	<HeroSection video={heroVideo} {showVideo} onPlayVideo={playHeroVideo} />
