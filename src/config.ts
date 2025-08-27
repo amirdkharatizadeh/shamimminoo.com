@@ -11,24 +11,20 @@ export const siteConfig = {
 
 export const navigation = [
   {
-    name: "Concerts",
-    href: "#concerts"
-  },
-  {
     name: "About",
-    href: "#about"
+    href: "/about"
   },
   {
-    name: "Media",
-    href: "#media"
+    name: "Videos",
+    href: "/videos"
   },
   {
-    name: "Press",
-    href: "#press"
+    name: "News",
+    href: "/news"
   },
   {
     name: "Contact",
-    href: "#contact"
+    href: "/contact"
   }
 ];
 

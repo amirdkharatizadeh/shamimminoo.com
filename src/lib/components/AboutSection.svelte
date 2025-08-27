@@ -22,7 +22,7 @@
 			</div>
 			<div>
 				<img 
-					src="https://shamimminoo.com/wp-content/uploads/2025/07/cropped-photo_6003572223870355762_y.jpg" 
+					src="https://shamimminoo.com/wp-content/uploads/2025/07/IMG_3632-scaled.jpeg" 
 					alt="Shamim Minoo performing with harp" 
 					class="w-full h-auto object-cover shadow-deep rounded-lg"
 				>

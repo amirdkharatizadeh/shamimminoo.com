@@ -1,4 +1,6 @@
 <script>
+	import { navigation, siteConfig } from '$lib/config';
+	
 	let isMenuOpen = false;
 	
 	function toggleMobileMenu() {
@@ -9,14 +11,12 @@
 <header class="fixed top-0 left-0 right-0 z-50 p-4 md:px-8 md:py-6 bg-black/20 backdrop-blur-sm">
 	<div class="container mx-auto flex justify-between items-center">
 		<a href="/" class="text-xl font-bold text-white playfair-display-bold">
-			Shamim Minoo
+			{siteConfig.name}
 		</a>
 		<nav class="hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wider">
-			<a href="#concerts" class="text-gray-300 hover:text-white transition-colors">Concerts</a>
-			<a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
-			<a href="#media" class="text-gray-300 hover:text-white transition-colors">Media</a>
-			<a href="#press" class="text-gray-300 hover:text-white transition-colors">Press</a>
-			<a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+			{#each navigation as item}
+				<a href={item.href} class="text-gray-300 hover:text-white transition-colors">{item.name}</a>
+			{/each}
 		</nav>
 		<div class="hidden md:flex items-center gap-4">
 			<a href="#" class="bg-primary text-primary-foreground px-4 py-2 text-xs font-bold uppercase hover:bg-primary/80 transition-colors">Play Album</a>
@@ -33,11 +33,9 @@
 	{#if isMenuOpen}
 		<div class="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-t border-border">
 			<nav class="container mx-auto py-4 px-4 flex flex-col gap-4">
-				<a href="#concerts" class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">Concerts</a>
-				<a href="#about" class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">About</a>
-				<a href="#media" class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">Media</a>
-				<a href="#press" class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">Press</a>
-				<a href="#contact" class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">Contact</a>
+				{#each navigation as item}
+					<a href={item.href} class="text-foreground hover:text-primary transition-colors font-semibold uppercase tracking-wider">{item.name}</a>
+				{/each}
 				<a href="#" class="bg-primary text-primary-foreground px-4 py-2 text-xs font-bold uppercase hover:bg-primary/80 transition-colors text-center">Play Album</a>
 			</nav>
 		</div>
