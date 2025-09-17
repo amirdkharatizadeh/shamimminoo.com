@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-vercel'
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from "@sveltejs/adapter-cloudflare";
 import { sequence, preprocessMeltUI } from '@melt-ui/pp'
 import markdown from './src/lib/markdown/index.js'
 

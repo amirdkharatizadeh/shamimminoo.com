@@ -14,6 +14,54 @@ export interface Concert {
 	component?: any; // Svelte component for rendered markdown
 }
 
+export interface NewsArticle {
+	slug: string;
+	title: string;
+	date: string;
+	category: string;
+	image?: string;
+	excerpt: string;
+	featured?: boolean;
+	author?: string;
+	readTime?: string;
+	tags?: string[];
+	component?: any; // Svelte component for rendered markdown
+}
+
+export interface Page {
+	slug: string;
+	title: string;
+	date: string;
+	category: string;
+	image?: string;
+	excerpt: string;
+	featured?: boolean;
+	author?: string;
+	readTime?: string;
+	tags?: string[];
+	component?: any; // Svelte component for rendered markdown
+}
+
+export interface Video {
+	slug: string;
+	title: string;
+	date: string;
+	category: string;
+	youtubeId: string;
+	startTime?: number;
+	duration?: string;
+	image?: string;
+	excerpt: string;
+	featured?: boolean;
+	venue?: string;
+	location?: string;
+	composer?: string;
+	arrangement?: string;
+	readTime?: string;
+	tags?: string[];
+	component?: any; // Svelte component for rendered markdown
+}
+
 // Dummy concert data
 export const concerts: Concert[] = [
 	{

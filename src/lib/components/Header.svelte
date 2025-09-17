@@ -1,5 +1,5 @@
 <script>
-	import { navigation, siteConfig } from '../config';
+	import { navigation, siteConfig } from '../../../contents/config';
 	
 	let isMenuOpen = false;
 	

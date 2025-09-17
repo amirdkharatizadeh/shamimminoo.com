@@ -3,29 +3,34 @@ import type { Concert } from '$lib/contents';
 
 export const load: PageLoad = async () => {
 	try {
-		// Load all concert markdown files
-		const concertModules = import.meta.glob('/contents/conserts/*.md');
+		// Load concert markdown files for homepage
+		const concertModules = import.meta.glob('../contents/conserts/*.md');
 		const concerts: Concert[] = [];
 
 		for (const path in concertModules) {
-			const module = await concertModules[path]() as any;
-			const slug = path.split('/').pop()?.replace('.md', '') || '';
-			
-			const concert: Concert = {
-				slug,
-				title: module.metadata.title,
-				date: module.metadata.date,
-				time: module.metadata.time,
-				venue: module.metadata.venue,
-				location: module.metadata.location,
-				image: module.metadata.image,
-				description: module.metadata.description,
-				program: module.metadata.program,
-				tickets: module.metadata.tickets,
-				status: module.metadata.status,
-				featured: module.metadata.featured
-			};
-			concerts.push(concert);
+			try {
+				const module = await concertModules[path]() as any;
+				const slug = path.split('/').pop()?.replace('.md', '') || '';
+				
+				const concert: Concert = {
+					slug,
+					title: module.metadata.title,
+					date: module.metadata.date,
+					time: module.metadata.time,
+					venue: module.metadata.venue,
+					location: module.metadata.location,
+					image: module.metadata.image,
+					description: module.metadata.description,
+					program: module.metadata.program,
+					tickets: module.metadata.tickets,
+					status: module.metadata.status,
+					featured: module.metadata.featured,
+					component: module.default
+				};
+				concerts.push(concert);
+			} catch (e) {
+				console.warn(`Failed to load concert from ${path}:`, e);
+			}
 		}
 
 		// Sort concerts by date (upcoming first)
@@ -45,8 +50,8 @@ export const load: PageLoad = async () => {
 		// Get upcoming concerts for the home page
 		const upcomingConcerts = concerts.filter(c => new Date(c.date) >= new Date());
 		
-		// Use upcoming concerts if available, otherwise show recent concerts
-		const concertsToShow = upcomingConcerts.length > 0 ? upcomingConcerts : concerts;
+		// Use upcoming concerts if available, otherwise show recent concerts (limit to 3 for homepage)
+		const concertsToShow = upcomingConcerts.length > 0 ? upcomingConcerts.slice(0, 3) : concerts.slice(0, 3);
 
 		return {
 			concerts: concertsToShow

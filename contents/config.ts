@@ -12,7 +12,11 @@ export const siteConfig = {
 export const navigation = [
   {
     name: "About",
-    href: "/about"
+    href: "/p/about"
+  },
+  {
+    name: "Concerts",
+    href: "/concerts"
   },
   {
     name: "Videos",
@@ -24,7 +28,7 @@ export const navigation = [
   },
   {
     name: "Contact",
-    href: "/contact"
+    href: "/p/contact"
   }
 ];
 
@@ -132,12 +136,12 @@ export const newsletter = {
 
 export const footer = {
   links: [
-    { name: "Home", href: "#" },
-    { name: "Concert", href: "#concerts" },
-    { name: "Discography", href: "#media" },
-    { name: "About", href: "#about" },
-    { name: "Press", href: "#press" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", href: "/" },
+    { name: "Concerts", href: "/concerts" },
+    { name: "Videos", href: "/videos" },
+    { name: "About", href: "/p/about" },
+    { name: "News", href: "/news" },
+    { name: "Contact", href: "/p/contact" }
   ],
   copyright: "© 2025 Shamim Minoo. All rights reserved."
 };

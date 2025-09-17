@@ -4,7 +4,7 @@
 	import AboutSection from "$lib/components/AboutSection.svelte";
 	import ConsertsMini from "$lib/components/ConsertsMini.svelte";
 	import Footer from "$lib/components/Footer.svelte";
-	import { heroVideo } from "$lib/config.js";
+	import { hero } from "../../contents/config.js";
 
 	export let data;
 
@@ -31,10 +31,10 @@
 	/>
 </svelte:head>
 
-<!-- <Header /> -->
+<Header />
 
 <main class="bg-background text-foreground">
-	<HeroSection video={heroVideo} {showVideo} onPlayVideo={playHeroVideo} />
+	<HeroSection video={hero} {showVideo} onPlayVideo={playHeroVideo} />
 
 	<AboutSection />
 
@@ -163,10 +163,10 @@
 				<h3
 					class="text-4xl font-bold text-primary playfair-display-bold"
 				>
-					Press Release
+					Latest News
 				</h3>
 				<a
-					href="#"
+					href="/news"
 					class="border-2 border-primary text-primary px-6 py-2 text-xs font-bold uppercase hover:bg-primary hover:text-primary-foreground transition-all duration-300"
 					>All News</a
 				>
