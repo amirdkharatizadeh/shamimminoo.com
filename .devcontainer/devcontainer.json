@@ -1,0 +1,28 @@
+{
+    "name": "Node.js 24 + Bun DevContainer",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "24"
+        },
+        "ghcr.io/shyim/devcontainers-features/bun:0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5173
+    ],
+    "portsAttributes": {
+        "5173": {
+            "label": "Bun dev server"
+        }
+    },
+    "postCreateCommand": "bun --version && node --version",
+    "runArgs": [],
+    "overrideCommand": true,
+    "command": "bun dev --port 5173 --host 0.0.0.0"
+}
