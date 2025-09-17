@@ -1,0 +1,5 @@
+this is a personal website of a harpist artist named Shamim Minoo Based on paris,france. 
+the project is svelte5 and sveltekit.
+most part of the project is serverside render, it means that there are mdx files at `contents` folder in the root of the project.
+project uses bun to run.
+mdsvex and tailwind added to project

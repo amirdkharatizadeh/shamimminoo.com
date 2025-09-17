@@ -2,8 +2,11 @@
 	import Header from "$lib/components/Header.svelte";
 	import HeroSection from "$lib/components/HeroSection.svelte";
 	import AboutSection from "$lib/components/AboutSection.svelte";
+	import ConsertsMini from "$lib/components/ConsertsMini.svelte";
 	import Footer from "$lib/components/Footer.svelte";
 	import { heroVideo } from "$lib/config.js";
+
+	export let data;
 
 	let showVideo = false;
 	let videoSection = false;
@@ -36,29 +39,7 @@
 	<AboutSection />
 
 	<!-- Concerts Section -->
-	<section id="concerts" class="py-20 md:py-24 bg-muted/20">
-		<div class="container mx-auto text-center px-4">
-			<h3
-				class="text-4xl font-bold mb-4 text-primary playfair-display-bold"
-			>
-				Concerts
-			</h3>
-			<div
-				class="max-w-md mx-auto border-t-2 border-primary/50 pt-8 mt-8"
-			>
-				<p class="text-muted-foreground text-lg mb-8">
-					No upcoming events scheduled yet. Stay tuned!
-				</p>
-				<a
-					href="#"
-					class="border-2 border-primary text-primary px-8 py-3 font-semibold uppercase text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 inline-flex items-center gap-2"
-				>
-					All Concerts
-					<i class="fas fa-long-arrow-alt-right"></i>
-				</a>
-			</div>
-		</div>
-	</section>
+	<ConsertsMini concerts={data.concerts} maxItems={3} />
 
 	<!-- Video Section -->
 	<section id="media" class="py-20 md:py-32 bg-background text-center">

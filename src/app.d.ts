@@ -10,4 +10,24 @@ declare global {
 	}
 }
 
+// MDX type declarations
+declare module "*.mdx" {
+	import { SvelteComponent } from "svelte";
+	
+	export default class extends SvelteComponent {}
+	export const metadata: {
+		title?: string;
+		date?: string;
+		time?: string;
+		venue?: string;
+		location?: string;
+		image?: string;
+		description?: string;
+		program?: string[];
+		tickets?: string;
+		status?: 'upcoming' | 'past' | 'cancelled';
+		featured?: boolean;
+	};
+}
+
 export {};

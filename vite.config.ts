@@ -8,5 +8,13 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit(),
 		devtoolsJson()
-	]
+	],
+	server: {
+		fs: { allow: ['..'] },
+	},
+	resolve: {
+		alias: {
+			'$contents': './contents'
+		}
+	}
 });
