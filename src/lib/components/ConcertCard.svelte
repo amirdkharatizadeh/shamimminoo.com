@@ -1,5 +1,6 @@
 <script>
 	import { formatDate } from '$lib/utils';
+	import StatusBadge from './StatusBadge.svelte';
 
 	export let concert;
 	export let isPast = false;
@@ -40,18 +41,12 @@
 		<!-- Status Badges -->
 		<div class="absolute top-4 left-4 flex gap-2">
 			{#if concert.featured}
-				<span class="bg-primary text-primary-foreground px-2 py-1 text-xs font-bold uppercase rounded shadow-lg">
-					Featured
-				</span>
+				<StatusBadge type="featured" text="Featured" />
 			{/if}
 			{#if isPast || concert.status === 'past'}
-				<span class="bg-muted text-muted-foreground px-2 py-1 text-xs font-bold uppercase rounded shadow-lg">
-					Past Event
-				</span>
+				<StatusBadge type="past" text="Past Event" />
 			{:else if concert.status === 'upcoming'}
-				<span class="bg-green-600 text-white px-2 py-1 text-xs font-bold uppercase rounded shadow-lg">
-					Upcoming
-				</span>
+				<StatusBadge type="upcoming" text="Upcoming" />
 			{/if}
 		</div>
 	</div>

@@ -2,6 +2,10 @@
 	import { formatDate } from '$lib/utils';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import PageHero from '$lib/components/PageHero.svelte';
+	import ContentSection from '$lib/components/ContentSection.svelte';
+	import StatusBadge from '$lib/components/StatusBadge.svelte';
+	import SectionCard from '$lib/components/SectionCard.svelte';
 	// import * as config from '$lib/site/config'
 
 	export let data;
@@ -46,182 +50,144 @@
 
 <main class="min-h-screen">
 	<!-- Hero Section -->
-	<section class="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-background via-muted/10 to-primary/5 relative overflow-hidden">
-		<div class="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
-		<div class="container mx-auto px-4 relative">
-			<div class="max-w-4xl mx-auto">
-				<!-- Breadcrumb -->
-				<nav class="mb-8">
-					<ol class="flex items-center space-x-2 text-sm text-muted-foreground">
-						<li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
-						<li class="text-primary/50">/</li>
-						<li><a href="/concerts" class="hover:text-primary transition-colors">Concerts</a></li>
-						<li class="text-primary/50">/</li>
-						<li class="text-foreground">{concert.title}</li>
-					</ol>
-				</nav>
-
-				<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-					<!-- Concert Image -->
-					<div class="lg:col-span-5">
-						<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative">
-							{#if concert.image}
-								<img 
-									src={concert.image} 
-									alt={concert.title}
-									class="w-full h-full object-cover"
-								/>
-							{:else}
-								<div class="w-full h-full bg-gradient-to-br from-primary/10 to-muted/20 flex items-center justify-center">
-									<div class="text-center">
-										<div class="text-8xl text-primary mb-4">🎼</div>
-										<p class="text-lg text-foreground/80">Concert</p>
-									</div>
-								</div>
-							{/if}
-
-							<!-- Status Badge -->
-							<div class="absolute top-4 left-4 flex gap-2">
-								{#if concert.featured}
-									<span class="bg-primary text-primary-foreground px-3 py-1 text-sm font-bold uppercase rounded-full shadow-lg">
-										Featured
-									</span>
-								{/if}
-								{#if isUpcoming}
-									<span class="bg-green-600 text-white px-3 py-1 text-sm font-bold uppercase rounded-full shadow-lg">
-										Upcoming
-									</span>
-								{:else}
-									<span class="bg-muted text-muted-foreground px-3 py-1 text-sm font-bold uppercase rounded-full shadow-lg">
-										Past Event
-									</span>
-								{/if}
+	<PageHero
+		title={concert.title}
+		subtitle={`${formatDate(concert.date)}${concert.time ? ' • ' + formatTime(concert.time) : ''}`}
+		breadcrumbs={[
+			{href: '/', label: 'Home'},
+			{href: '/concerts', label: 'Concerts'},
+			{label: concert.title}
+		]}
+		variant="detail"
+		backgroundGradient="from-background via-muted/10 to-primary/5"
+	>
+		<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mt-8">
+			<!-- Concert Image -->
+			<div class="lg:col-span-5">
+				<div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative">
+					{#if concert.image}
+						<img 
+							src={concert.image} 
+							alt={concert.title}
+							class="w-full h-full object-cover"
+						/>
+					{:else}
+						<div class="w-full h-full bg-gradient-to-br from-primary/10 to-muted/20 flex items-center justify-center">
+							<div class="text-center">
+								<div class="text-8xl text-primary mb-4">🎼</div>
+								<p class="text-lg text-foreground/80">Concert</p>
 							</div>
 						</div>
-					</div>
-					
-					<!-- Concert Details -->
-					<div class="lg:col-span-7 space-y-6">
-						<div>
-							<p class="text-sm text-primary font-bold uppercase tracking-wider mb-3">
-								{formatDate(concert.date)}
-								{#if concert.time}
-									• {formatTime(concert.time)}
-								{/if}
-							</p>
-							<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary playfair-display-bold mb-4 leading-tight">
-								{concert.title}
-							</h1>
-							
-							<!-- Venue Information -->
-							<div class="bg-gradient-to-r from-primary/10 to-transparent p-6 rounded-xl border-l-4 border-primary">
-								<div class="space-y-2">
-									<p class="text-lg font-semibold text-foreground">{concert.venue}</p>
-									<p class="text-muted-foreground flex items-center gap-2">
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-										</svg>
-										{concert.location}
-									</p>
-								</div>
-							</div>
-						</div>
+					{/if}
 
-						<p class="text-lg text-foreground/80 leading-relaxed">
-							{concert.description}
-						</p>
-
-						<!-- Action Buttons -->
-						<div class="flex flex-col sm:flex-row gap-4 pt-4">
-							{#if concert.tickets && isUpcoming}
-								<a
-									href={concert.tickets}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="bg-primary text-primary-foreground px-8 py-3 font-bold uppercase text-sm hover:bg-primary/80 transition-all duration-300 text-center shadow-lg hover:shadow-xl rounded-full"
-								>
-									Buy Tickets
-								</a>
-							{/if}
-							<a
-								href="/concerts"
-								class="border-2 border-primary text-primary px-8 py-3 font-bold uppercase text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center rounded-full"
-							>
-								← Back to Concerts
-							</a>
-						</div>
+					<!-- Status Badge -->
+					<div class="absolute top-4 left-4 flex gap-2">
+						{#if concert.featured}
+							<StatusBadge type="featured" text="Featured" />
+						{/if}
+						{#if isUpcoming}
+							<StatusBadge type="upcoming" text="Upcoming" />
+						{:else}
+							<StatusBadge type="past" text="Past Event" />
+						{/if}
 					</div>
 				</div>
 			</div>
+			
+			<!-- Concert Details -->
+			<div class="lg:col-span-7 space-y-6">
+				<!-- Venue Information -->
+				<div class="bg-gradient-to-r from-primary/10 to-transparent p-6 rounded-xl border-l-4 border-primary">
+					<div class="space-y-2">
+						<p class="text-lg font-semibold text-foreground">{concert.venue}</p>
+						<p class="text-muted-foreground flex items-center gap-2">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+							</svg>
+							{concert.location}
+						</p>
+					</div>
+				</div>
+
+				<p class="text-lg text-foreground/80 leading-relaxed">
+					{concert.description}
+				</p>
+
+				<!-- Action Buttons -->
+				<div class="flex flex-col sm:flex-row gap-4 pt-4">
+					{#if concert.tickets && isUpcoming}
+						<a
+							href={concert.tickets}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="bg-primary text-primary-foreground px-8 py-3 font-bold uppercase text-sm hover:bg-primary/80 transition-all duration-300 text-center shadow-lg hover:shadow-xl rounded-full"
+						>
+							Buy Tickets
+						</a>
+					{/if}
+					<a
+						href="/concerts"
+						class="border-2 border-primary text-primary px-8 py-3 font-bold uppercase text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 text-center rounded-full"
+					>
+						← Back to Concerts
+					</a>
+				</div>
+			</div>
 		</div>
-	</section>
+	</PageHero>
 
 	<!-- Program Section -->
 	{#if concert.program && concert.program.length > 0}
-		<section class="py-16 md:py-20 bg-gradient-to-br from-muted/5 to-primary/5">
-			<div class="container mx-auto px-4">
-				<div class="max-w-4xl mx-auto">
-					<h2 class="text-3xl md:text-4xl font-bold text-primary playfair-display-bold mb-8 text-center">
-						Program
-					</h2>
-					
-					<div class="bg-gradient-to-br from-background/80 to-muted/20 rounded-2xl p-8 border border-primary/20">
-						<ul class="space-y-4">
-							{#each concert.program as piece, index}
-								<li class="flex items-start gap-4">
-									<span class="flex-shrink-0 w-8 h-8 bg-primary/20 text-primary rounded-full flex items-center justify-center text-sm font-bold">
-										{index + 1}
-									</span>
-									<div class="flex-grow">
-										<p class="text-foreground font-medium leading-relaxed">{piece}</p>
-									</div>
-								</li>
-							{/each}
-						</ul>
-					</div>
-				</div>
+		<ContentSection
+			title="Program"
+			variant="muted"
+			maxWidth="max-w-4xl"
+		>
+			<div class="bg-gradient-to-br from-background/80 to-muted/20 rounded-2xl p-8 border border-primary/20">
+				<ul class="space-y-4">
+					{#each concert.program as piece, index}
+						<li class="flex items-start gap-4">
+							<span class="flex-shrink-0 w-8 h-8 bg-primary/20 text-primary rounded-full flex items-center justify-center text-sm font-bold">
+								{index + 1}
+							</span>
+							<div class="flex-grow">
+								<p class="text-foreground font-medium leading-relaxed">{piece}</p>
+							</div>
+						</li>
+					{/each}
+				</ul>
 			</div>
-		</section>
-	{/if}
-
-	<!-- Concert Description Content -->
-	<section class="py-16 md:py-20 bg-background">
-		<div class="container mx-auto px-4">
-			<div class="max-w-4xl mx-auto">
-				<article class="prose prose-invert prose-lg max-w-none">
-					<svelte:component this={data.component} />
-				</article>
-			</div>
-		</div>
-	</section>
+		</ContentSection>
+	{/if}	<!-- Concert Description Content -->
+	<ContentSection variant="default" maxWidth="max-w-4xl">
+		<article class="prose prose-invert prose-lg max-w-none">
+			<svelte:component this={data.component} />
+		</article>
+	</ContentSection>
 
 	<!-- Related Concerts -->
-	<section class="py-16 md:py-20 bg-gradient-to-br from-muted/10 to-primary/5">
-		<div class="container mx-auto px-4">
-			<div class="max-w-6xl mx-auto text-center">
-				<h2 class="text-3xl md:text-4xl font-bold text-primary playfair-display-bold mb-8">
-					More Concerts
-				</h2>
-				<p class="text-muted-foreground mb-8">Discover other performances by Shamim Minoo</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="/concerts"
-						class="bg-primary text-primary-foreground px-8 py-3 font-bold uppercase text-sm hover:bg-primary/80 transition-all duration-300 rounded-full shadow-lg hover:shadow-xl"
-					>
-						View All Concerts
-					</a>
-					<a
-						href="/"
-						class="border-2 border-primary text-primary px-8 py-3 font-bold uppercase text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 rounded-full"
-					>
-						Back to Home
-					</a>
-				</div>
-			</div>
+	<ContentSection
+		title="More Concerts"
+		subtitle="Discover other performances by Shamim Minoo"
+		variant="muted"
+		maxWidth="max-w-6xl"
+	>
+		<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			<a
+				href="/concerts"
+				class="bg-primary text-primary-foreground px-8 py-3 font-bold uppercase text-sm hover:bg-primary/80 transition-all duration-300 rounded-full shadow-lg hover:shadow-xl"
+			>
+				View All Concerts
+			</a>
+			<a
+				href="/"
+				class="border-2 border-primary text-primary px-8 py-3 font-bold uppercase text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 rounded-full"
+			>
+				Back to Home
+			</a>
 		</div>
-	</section>
+	</ContentSection>
 </main>
 
 <Footer />
