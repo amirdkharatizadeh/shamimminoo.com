@@ -128,7 +128,7 @@ export const press = {
 };
 
 export const newsletter = {
-  title: "My Fan Club",
+  title: "Updates",
   subtitle: "Subscribe to",
   placeholder: "Email",
   buttonText: "Subscribe"

@@ -172,108 +172,83 @@
 				>
 			</div>
 
-			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="max-w-4xl mx-auto">
 				<!-- News Item 1 -->
-				<div class="bg-background group">
-					<div class="overflow-hidden">
-						<img
-							src="/img/maskatomb_wide-559x314.jpg"
-							alt="News"
-							class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-						/>
-					</div>
-					<div class="p-8 text-left">
-						<p class="text-xs text-muted-foreground mb-4">
-							October 26, 2017
-						</p>
-						<h4
-							class="text-xl font-semibold mb-4 text-foreground/90 hover:text-primary transition-colors"
+				<article class="border-b border-muted/40 pb-8 mb-8 last:border-b-0 last:pb-0 last:mb-0">
+					<p class="text-xs text-muted-foreground mb-2">
+						October 26, 2017
+					</p>
+					<h4
+						class="text-2xl font-semibold mb-3 text-foreground/90 hover:text-primary transition-colors"
+					>
+						<a href="#"
+							>We are finalist @ the International Music
+							Festival</a
 						>
-							<a href="#"
-								>We are finalist @ the International Music
-								Festival</a
-							>
-						</h4>
-						<p
-							class="text-sm text-foreground/70 mb-6 roboto-slab-regular"
-						>
-							Picanha ball tip prosciutto shoulder turducken pig
-							alcatra chuck pork meatball cupim doner
-							tenderloin...
-						</p>
-						<a
-							href="#"
-							class="font-bold text-primary text-sm uppercase tracking-wider"
-							>Read More</a
-						>
-					</div>
-				</div>
+					</h4>
+					<p
+						class="text-foreground/70 mb-4 roboto-slab-regular leading-relaxed"
+					>
+						Picanha ball tip prosciutto shoulder turducken pig
+						alcatra chuck pork meatball cupim doner
+						tenderloin...
+					</p>
+					<a
+						href="#"
+						class="font-bold text-primary text-sm uppercase tracking-wider hover:text-primary/80 transition-colors"
+						>Read More →</a
+					>
+				</article>
+
 				<!-- News Item 2 -->
-				<div class="bg-background group">
-					<div class="overflow-hidden">
-						<img
-							src="/img/Indiana_wide-559x314.jpg"
-							alt="News"
-							class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-						/>
-					</div>
-					<div class="p-8 text-left">
-						<p class="text-xs text-muted-foreground mb-4">
-							October 25, 2017
-						</p>
-						<h4
-							class="text-xl font-semibold mb-4 text-foreground/90 hover:text-primary transition-colors"
-						>
-							<a href="#">New Album Release by Ultrasonic</a>
-						</h4>
-						<p
-							class="text-sm text-foreground/70 mb-6 roboto-slab-regular"
-						>
-							Following an already impressive catalog that
-							includes last year’s “Primus EP”on NBGS, “High Key”
-							is...
-						</p>
-						<a
-							href="#"
-							class="font-bold text-primary text-sm uppercase tracking-wider"
-							>Read More</a
-						>
-					</div>
-				</div>
+				<article class="border-b border-muted/40 pb-8 mb-8 last:border-b-0 last:pb-0 last:mb-0">
+					<p class="text-xs text-muted-foreground mb-2">
+						October 25, 2017
+					</p>
+					<h4
+						class="text-2xl font-semibold mb-3 text-foreground/90 hover:text-primary transition-colors"
+					>
+						<a href="#">New Album Release by Ultrasonic</a>
+					</h4>
+					<p
+						class="text-foreground/70 mb-4 roboto-slab-regular leading-relaxed"
+					>
+						Following an already impressive catalog that
+						includes last year's "Primus EP"on NBGS, "High Key"
+						is...
+					</p>
+					<a
+						href="#"
+						class="font-bold text-primary text-sm uppercase tracking-wider hover:text-primary/80 transition-colors"
+						>Read More →</a
+					>
+				</article>
+
 				<!-- News Item 3 -->
-				<div class="bg-background group">
-					<div class="overflow-hidden">
-						<img
-							src="/img/adele_wide-559x314.jpg"
-							alt="News"
-							class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-						/>
-					</div>
-					<div class="p-8 text-left">
-						<p class="text-xs text-muted-foreground mb-4">
-							October 24, 2017
-						</p>
-						<h4
-							class="text-xl font-semibold mb-4 text-foreground/90 hover:text-primary transition-colors"
+				<article class="border-b border-muted/40 pb-8 mb-8 last:border-b-0 last:pb-0 last:mb-0">
+					<p class="text-xs text-muted-foreground mb-2">
+						October 24, 2017
+					</p>
+					<h4
+						class="text-2xl font-semibold mb-3 text-foreground/90 hover:text-primary transition-colors"
+					>
+						<a href="#"
+							>Additional North American Dates Announced</a
 						>
-							<a href="#"
-								>Additional North American Dates Announced</a
-							>
-						</h4>
-						<p
-							class="text-sm text-foreground/70 mb-6 roboto-slab-regular"
-						>
-							Sonaar WordPress Theme is pleased to announce
-							additional dates to our North American tour! Spicy
-							jalapeno...
-						</p>
-						<a
-							href="#"
-							class="font-bold text-primary text-sm uppercase tracking-wider"
-							>Read More</a
-						>
-					</div>
-				</div>
+					</h4>
+					<p
+						class="text-foreground/70 mb-4 roboto-slab-regular leading-relaxed"
+					>
+						Sonaar WordPress Theme is pleased to announce
+						additional dates to our North American tour! Spicy
+						jalapeno...
+					</p>
+					<a
+						href="#"
+						class="font-bold text-primary text-sm uppercase tracking-wider hover:text-primary/80 transition-colors"
+						>Read More →</a
+					>
+				</article>
 			</div>
 		</div>
 	</section>
