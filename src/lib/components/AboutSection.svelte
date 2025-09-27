@@ -1,15 +1,21 @@
 <section id="about" class="py-20 md:py-32 bg-background text-foreground">
 	<div class="container mx-auto px-4">
 		<div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-			<div class="prose prose-invert prose-lg max-w-none roboto-slab text-foreground/80">
+			<div class="prose prose-invert prose-lg max-w-none roboto-slab text-foreground/80 text-justify">
 				<p class="drop-cap">
-					<b>Shamim Minoo</b> is an internationally recognized Iranian harpist. At the age of 20, she was awarded the <b>Gold Medal</b> and <b>Renié Prize</b> at the <b>13th USA International Harp Competition</b> (2025).
+					<b>Shamim Minoo</b> is an internationally recognized Iranian harpist. At the age of 20, she was awarded the Gold Medal and Renié Prize at the 13th USA International Harp Competition (2025).
 				</p>
 				<p>
-					Born in 2004, she began studying harp and voice at age six. She soon appeared with major Iranian orchestras including the Tehran Symphony and Iranian National Orchestras.
+					Born in 2004, she began studying harp and voice at age six. She soon appeared with major Iranian orchestras including the Tehran Symphony and Iranian National Orchestras. Shamim performed Mozart’s Concerto for Flute and Harp with the Iranian Youth Orchestra, and a year later, when she was 13, she won First Prize at the Concours Français de la Harpe, leading to recital opportunities in Limoges and Paris.
 				</p>
 				<p>
-					In 2020, at the age of 15, she moved alone to Paris to study at the Conservatoire à Rayonnement Régional (CRR) with Ghislaine Petit-Volta, later entering the Conservatoire National Supérieur de Musique et de Danse de Paris under Isabelle Moretti and Geneviève Létang.
+					In 2020, at the age of 15, she moved alone to Paris to study at the Conservatoire à Rayonnement Régional (CRR) with Ghislaine Petit-Volta, later entering the Conservatoire National Supérieur de Musique et de Danse de Paris under Isabelle Moretti and Geneviève Létang. She earned her bachelor’s degree with highest honors (mention très bien à l’unanimité avec les félicitations du jury) and is currently completing the last year of her master’s degree.
+				</p>
+				<p>
+					Shamim has received First Prizes from the Szeged International Harp Competition (Hungary, 2022), Suoni d’Arpa Competition (Italy, 2023), and the Rossetti Prize (2024), which led to a performance of Mario Castelnuovo-Tedesco concertino for harp with the Nuova Orchestra Scarlatti.
+				</p>
+				<p>
+					She is a laureate of the Fondation de France (Prix Monique Rollin, 2024 & 2025), Fondation Société Générale, Fondation Safran, Fondation l’Or du Rhin, the Académie de Villecroze, and the French Ministry of Culture. In 2024, she was awarded a full scholarship to the Aspen Music Festival, studying with Nancy Allen.
 				</p>
 				<div class="text-right mt-8">
 					<a href="#" class="bg-primary text-primary-foreground px-6 py-3 text-sm font-bold uppercase hover:bg-primary/80 transition-all duration-300 inline-flex items-center gap-2">
