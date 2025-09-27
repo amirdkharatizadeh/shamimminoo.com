@@ -10,7 +10,7 @@
 
 <Header />
 
-<main class="bg-white text-black pt-20">
+<main class="pt-80">
 
 	<!-- Introduction Section -->
 	<section class="text-center py-16 px-4">
@@ -25,7 +25,7 @@
 	<!-- First Image Section -->
 	<section class="container mx-auto px-4 my-8">
 		<img 
-			src="https://shamimminoo.com/wp-content/uploads/2025/07/IMG_3649-1024x683.jpeg" 
+			src="img/IMG_3636.JPEG" 
 			alt="Shamim Minoo performing on the harp in a concert hall." 
 			class="w-full h-auto object-cover"
 		>
@@ -66,15 +66,6 @@
 		</div>
 	</section>
 
-	<!-- Second Image Section -->
-	<section class="container mx-auto px-4 my-8">
-		<img 
-			src="https://shamimminoo.com/wp-content/uploads/elementor/thumbs/IMG_3636-scaled-r8cvoi1lus51zyivayteqwo5pwrm8bju4yxaua4rxs.jpeg" 
-			alt="Shamim Minoo smiling during the 13th USA International Harp Competition." 
-			class="w-full h-auto object-cover"
-		>
-	</section>
-
 	<!-- Quote Section -->
 	<section class="text-center py-16 px-4">
 		<div class="max-w-4xl mx-auto">
@@ -90,9 +81,9 @@
 		<div class="flex flex-col items-center">
 			<!-- This image from the HTML seems to be a signature or decorative element -->
 			<img 
-				src="https://shamimminoo.com/wp-content/uploads/2025/08/Screenshot-2025-08-02-212501.png" 
+				src="img/image.png" 
 				alt="Artistic signature element" 
-				class="w-64 h-auto my-8"
+				class="max-w-8xl h-auto my-8"
 			>
 			
 			<a href="/contact" class="inline-block bg-black text-white uppercase tracking-wider font-semibold py-3 px-8 hover:bg-gray-800 transition-colors duration-300">
