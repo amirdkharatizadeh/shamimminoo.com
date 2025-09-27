@@ -1,11 +1,11 @@
 ---
-title: "Persian Traditional Melody - \"Shur\" Arranged for Harp"
+title: "Consert number 1"
 date: "2025-02-10"
 category: "Cultural"
 youtubeId: "dQw4w9WgXcQ"
 startTime: 120
 duration: "8:45"
-image: "/img/persian-shur-thumb.jpg"
+image: "/img/maskatomb_wide-559x314.jpg"
 excerpt: "An intimate exploration of Persian traditional music adapted for Western concert harp, showcasing Shamim's unique cultural bridge-building through music."
 featured: false
 venue: "Home Studio"

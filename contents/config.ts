@@ -11,8 +11,8 @@ export const siteConfig = {
 
 export const navigation = [
   {
-    name: "About",
-    href: "/p/about"
+    name: "Biography",
+    href: "/p/biography"
   },
   {
     name: "Concerts",
@@ -128,7 +128,7 @@ export const press = {
 };
 
 export const newsletter = {
-  title: "My Fan Club",
+  title: "Updates",
   subtitle: "Subscribe to",
   placeholder: "Email",
   buttonText: "Subscribe"
@@ -139,7 +139,7 @@ export const footer = {
     { name: "Home", href: "/" },
     { name: "Concerts", href: "/concerts" },
     { name: "Videos", href: "/videos" },
-    { name: "About", href: "/p/about" },
+    { name: "Biography", href: "/p/biography" },
     { name: "News", href: "/news" },
     { name: "Contact", href: "/p/contact" }
   ],
