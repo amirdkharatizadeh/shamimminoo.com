@@ -12,7 +12,7 @@ export const siteConfig = {
 export const navigation = [
   {
     name: "Biography",
-    href: "/p/biography"
+    href: "/about"
   },
   {
     name: "Concerts",
