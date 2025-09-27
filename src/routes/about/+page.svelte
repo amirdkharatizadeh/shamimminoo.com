@@ -15,10 +15,10 @@
 	<!-- Introduction Section -->
 	<section class="text-center py-16 px-4">
 		<div class="max-w-4xl mx-auto">
-			<h3 class="text-lg uppercase tracking-widest text-gray-500 font-light">Biography</h3>
-			<h1 class="text-6xl md:text-7xl font-serif mt-4">Shamim Minoo</h1>
-			<h2 class="text-3xl md:text-4xl text-gray-700 font-light mt-2">Iranian harpist</h2>
-			<div class="w-24 h-px bg-gray-300 mx-auto my-12"></div>
+			<h3 class="text-lg uppercase tracking-widest text-muted-foreground font-light">Biography</h3>
+			<h1 class="text-6xl md:text-7xl font-serif mt-4 text-foreground">Shamim Minoo</h1>
+			<h2 class="text-3xl md:text-4xl text-muted-foreground font-light mt-2">Iranian harpist</h2>
+			<div class="w-24 h-px bg-border mx-auto my-12"></div>
 		</div>
 	</section>
 
@@ -34,12 +34,12 @@
 	<!-- Main Biography Text Section -->
 	<section class="py-16 px-4">
 		<div class="max-w-5xl mx-auto">
-			<h3 class="text-2xl font-semibold text-center text-gray-800">Harp Column Magazine :</h3>
-			<h3 class="text-3xl font-serif text-center mt-4 mb-12 leading-snug">
+			<h3 class="text-2xl font-semibold text-center text-foreground">Harp Column Magazine :</h3>
+			<h3 class="text-3xl font-serif text-center mt-4 mb-12 leading-snug text-foreground">
 				Iranian harpist Shamim Minoo stands out among a talented field of performers to take home the gold at the 13th USA International Harp Competition
 			</h3>
 
-			<div class="grid md:grid-cols-2 gap-12 text-base md:text-lg text-gray-700 leading-relaxed font-light">
+			<div class="grid md:grid-cols-2 gap-12 text-base md:text-lg text-muted-foreground leading-relaxed font-light">
 				<div>
 					<p class="mb-6">
 						Shamim Minoo, born in 2004 in Tehran, is the first in her family to pursue a career in music. She began her musical journey at the age of six in Iran, studying both harp and singing. By twelve, she was performing with major Iranian orchestras, including the Iranian Youth Orchestra, where she played Mozart’s Concerto for Flute and Harp. In the following years, she performed with the Tehran Symphony Orchestra, the Iranian National Orchestra, and the Tehran Philharmonic Orchestra.
@@ -69,10 +69,10 @@
 	<!-- Quote Section -->
 	<section class="text-center py-16 px-4">
 		<div class="max-w-4xl mx-auto">
-			<div class="w-24 h-px bg-gray-300 mx-auto mb-12"></div>
-			<h3 class="text-2xl font-light text-gray-600">find your personality in the music.</h3>
-			<h1 class="text-4xl md:text-5xl font-serif my-6 leading-tight">Don’t compete just to win a prize. Please! It doesn’t work.</h1>
-			<h2 class="text-3xl md:text-4xl text-gray-800 font-light">Go to improve yourself. Go to make progress.</h2>
+			<div class="w-24 h-px bg-border mx-auto mb-12"></div>
+			<h3 class="text-2xl font-light text-muted-foreground">find your personality in the music.</h3>
+			<h1 class="text-4xl md:text-5xl font-serif my-6 leading-tight text-foreground">Don't compete just to win a prize. Please! It doesn't work.</h1>
+			<h2 class="text-3xl md:text-4xl text-foreground font-light">Go to improve yourself. Go to make progress.</h2>
 		</div>
 	</section>
 
@@ -86,7 +86,7 @@
 				class="max-w-8xl h-auto my-8"
 			>
 			
-			<a href="/contact" class="inline-block bg-black text-white uppercase tracking-wider font-semibold py-3 px-8 hover:bg-gray-800 transition-colors duration-300">
+			<a href="/contact" class="inline-block bg-primary text-primary-foreground uppercase tracking-wider font-semibold py-3 px-8 hover:opacity-90 transition-opacity duration-300">
 				Contact Us
 			</a>
 		</div>
@@ -99,8 +99,6 @@
 <style>
 	:global(body) {
 		font-family: 'Roboto Slab', serif;
-		background-color: #000; /* Changement du fond en noir */
-		color: hsl(210, 10%, 85%);
 	}
 	
 	.playfair-display-bold {
@@ -119,7 +117,7 @@
 		line-height: 0.8;
 		margin-right: 0.15em;
 		margin-top: 0.1em;
-		color: var(--color-primary);
+		color: hsl(var(--primary));
 		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 	}
 	
@@ -135,10 +133,10 @@
 		top: 0;
 		width: 14px;
 		height: 14px;
-		background-color: var(--color-primary);
+		background-color: hsl(var(--primary));
 		border-radius: 50%;
-		border: 3px solid var(--color-background);
-		box-shadow: 0 0 0 3px var(--color-primary), 0 4px 8px rgba(0, 0, 0, 0.3);
+		border: 3px solid hsl(var(--background));
+		box-shadow: 0 0 0 3px hsl(var(--primary)), 0 4px 8px rgba(0, 0, 0, 0.3);
 	}
 	
 	/* Enhanced desktop interactions */
@@ -162,10 +160,10 @@
 			transform: translateY(-4px) scale(1.02);
 		}
 		
-		/* Better text selection */
+		/* Better text selection using theme colors */
 		::selection {
-			background: var(--color-primary);
-			color: var(--color-background);
+			background: hsl(var(--primary));
+			color: hsl(var(--primary-foreground));
 		}
 	}
 	
